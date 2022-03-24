@@ -4,7 +4,6 @@ We will use this database to store the users' data.
 Or delete it and create a new one.'''
 
 # import variables
-import json
 import sqlite3
 import logging
 
@@ -301,6 +300,7 @@ def remove():
 # log in as admin to access the admin page
 @app.route('/adminlogin', methods=['GET', 'POST'])
 def adminlogin():
+    app.secret_key="apple"
     if request.method == 'POST':
         email = request.form['email']
         password = request.form['password']
